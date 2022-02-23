@@ -1,7 +1,7 @@
 # General
 # Help: https://github.com/govfresh/civicfolio/wiki/Configure-your-site-settings
-title: CivicFolio
-description: A portfolio website theme for civic technologists.
+title: LeRoy Gardner
+description: A portfolio of a digital journey
 
 # Google Analytics
 # Help: https://github.com/govfresh/civicfolio/wiki/Add-Google-Analytics
@@ -9,15 +9,11 @@ analytics-id: G-PH233QG28Y
 
 # Connect
 # Help: https://github.com/govfresh/civicfolio/wiki/Configure-your-site-settings
-email: mailto:name@email.com
+email: mailto:me@leroygardner.dev
 calendar: /calendar
 linkedin: https://linkedin.com
-twitter: https://twitter.com/govfresh
-medium: https://medium.com/@govfresh
-figma: https://figma.com/govfresh
-github: https://github.com/govfresh
-facebook: https://facebook.com/govfresh
-instagram: https://instagram.com/govfresh
+twitter: https://twitter.com/leroygardner
+github: https://github.com/leroyg
 rss: /feed.xml
 
 # ---- You do not need to do anything below this line ---- #
