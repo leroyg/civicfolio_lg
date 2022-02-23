@@ -1,0 +1,92 @@
+# General
+# Help: https://github.com/govfresh/civicfolio/wiki/Configure-your-site-settings
+title: CivicFolio
+description: A portfolio website theme for civic technologists.
+
+# Google Analytics
+# Help: https://github.com/govfresh/civicfolio/wiki/Add-Google-Analytics
+analytics-id: G-PH233QG28Y
+
+# Connect
+# Help: https://github.com/govfresh/civicfolio/wiki/Configure-your-site-settings
+email: mailto:name@email.com
+calendar: /calendar
+linkedin: https://linkedin.com
+twitter: https://twitter.com/govfresh
+medium: https://medium.com/@govfresh
+figma: https://figma.com/govfresh
+github: https://github.com/govfresh
+facebook: https://facebook.com/govfresh
+instagram: https://instagram.com/govfresh
+rss: /feed.xml
+
+# ---- You do not need to do anything below this line ---- #
+
+# Powered by CivicFolio footer link
+
+powered-by: Yes
+
+# Pagination
+
+paginate: 12
+paginate_path: "/posts/page:num/"
+
+# Build settings
+kramdown:
+  auto_ids: true
+markdown: kramdown
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# Date/time
+date: "%B %-d, %Y"
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "work"
+    values:
+      layout: "work"
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: :title
+  posts:
+    output: true
+    permalink: /posts/:title
+  work:
+    output: true
+    permalink: /work/:title
+
+# Exclude
+exclude:
+  - CNAME
+  - readme.md
+  - gemfiles/
+  - Gemfile
+#   - Gemfile.lock
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

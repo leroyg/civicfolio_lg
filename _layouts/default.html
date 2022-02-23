@@ -1,0 +1,17 @@
+---
+layout: default
+---
+{% include meta.html %}
+{% include header.html %}
+<main id="main-content">
+    {% include hero.html %}
+    <div class="grid-container">
+        <div class="grid-row">
+            <div class="tablet:grid-col-8">
+                {{ content }}
+            </div>
+            <div class="tablet:grid-col-4"></div>
+        </div>
+    </div>
+</main>
+{% include footer.html %}

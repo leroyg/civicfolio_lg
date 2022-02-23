@@ -1,0 +1,79 @@
+---
+layout: home
+---
+{% include meta.html %}
+{% include header.html %}
+<main id="main-content">
+    {% include hero.html %}
+    {% if page.about-title %}
+    <div class="grid-container">
+        <div class="grid-row">
+            <div class="tablet:grid-col-12">
+                <h2>{{ page.about-title }}</h2>
+            </div>
+        </div>
+        <div class="grid-row">
+            <div class="tablet:grid-col-8">
+                {% if page.about-description %}
+                <p class="lead">{{ page.about-description }}</p>
+                {% endif %}
+                <p>
+                    {% if page.about-text %}
+                    <a href="{{ page.about-link }}" class="usa-button usa-button--big usa-button--outline margin-bottom-2">{{ page.about-text }}</a>
+                    {% endif %}
+                    {% if page.cv-text %}
+                    <a href="{{ page.cv-link }}" class="usa-button usa-button--big usa-button--outline">{{ page.cv-text }}</a>
+                    {% endif %}
+                </p>
+            </div>
+            {% if page.about-img %}
+            <div class="tablet:grid-col-4">
+                <img src="{{ site.baseurl }}/img/{{ page.about-img }}" alt="{{ page.about-img-alt }}" class="circle lg">
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+    {% if page.work-title %}
+    <div class="grid-container">
+        <div class="grid-row">
+            <div class="tablet:grid-col-12">
+                <h2>{{ page.work-title }}</h2>
+                {% include works.html limit=3 %}
+                <p>
+                    <a href="{{ page.work-link }}" class="usa-button usa-button--outline">{{ page.work-title }}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if page.press-title %}
+    <div class="grid-container">
+        <div class="grid-row">
+            <div class="tablet:grid-col-12">
+                <h2>{{ page.press-title }}</h2>
+                {% include press.html limit=3 %}
+                <p>
+                    <a href="{{ page.press-link }}" class="usa-button usa-button--outline">{{ page.press-title }}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if page.posts-title %}
+    <div class="grid-container">
+        <div class="grid-row">
+            <div class="tablet:grid-col-12">
+                <h2>{{ page.posts-title }}</h2>
+                {% include posts.html limit=3 home="true" %}
+                {% if page.posts-title %}
+                <p>
+                    <a href="{{ page.posts-link }}" class="usa-button usa-button--outline">{{ page.posts-title }}</a>
+                </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</main>
+{% include footer.html %}

@@ -1,0 +1,114 @@
+---
+layout: work
+---
+{% include meta.html %}
+{% include header.html %}
+<main id="main-content">
+    {% include hero.html %}
+    <div class="grid-container">
+        <div class="grid-row grid-gap">
+            <div class="tablet:grid-col-8">
+                {{ content | markdownify }}
+            </div>
+            <div class="tablet:grid-col-4">
+                {% if page.img-feat %}
+                <img src="{{ site.baseurl }}/img/work/{{ page.img-feat }}" alt="{{ page.title }}" class="rounded">
+                {% endif %}
+            </div>
+        </div>
+        <div class="grid-row">
+            <div class="tablet:grid-col-6">
+                {% if page.methods %}
+            {% if post %}
+            {% assign methods = post.methods %}
+            {% else %}
+            {% assign methods = page.methods %}
+            {% endif %}
+                <h2>Methods</h2>
+                <ul>
+                    {% for method in methods %}
+                    <li>
+                        {{ method }}
+                    </li>
+                    {% unless forloop.last %}{% endunless %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <div class="tablet:grid-col-6">
+                {% if page.tools %}
+                {% if post %}
+                {% assign tools = post.tools %}
+                {% else %}
+                {% assign tools = page.tools %}
+                {% endif %}
+                <h2>Tools</h2>
+                <ul>
+                    {% for tool in tools %}
+                    <li>
+                        {{ tool }}
+                    </li>
+                    {% unless forloop.last %}{% endunless %}
+                        {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="grid-container">
+        {% if page.samples-title %}
+        <div class="grid-row">
+            <div class="tablet:grid-col-12">
+                <h2>{{ page.samples-title }}</h2>
+            </div>
+        </div>
+        {% endif %}
+        <div class="grid-row grid-gap">
+            {% if page.sample-img-1 %}
+            <div class="tablet:grid-col-6">
+                <figure>
+                    <img src="{{ site.baseurl }}/img/work/{{ page.sample-img-1 }}" alt="{{ page.sample-img-alt-1 }}">
+                    <figcaption>{{ page.sample-img-caption-1 }}</figcaption>
+                </figure>
+            </div>
+            {% endif %}
+            {% if page.sample-img-2 %}
+            <div class="tablet:grid-col-6">
+                <figure>
+                    <img src="{{ site.baseurl }}/img/work/{{ page.sample-img-2 }}" alt="{{ page.sample-img-alt-2 }}">
+                    <figcaption>{{ page.sample-img-caption-2 }}</figcaption>
+                </figure>
+            </div>
+            {% endif %}
+        </div>
+        <div class="grid-row grid-gap">
+            {% if page.sample-img-3 %}
+            <div class="tablet:grid-col-6">
+                <figure>
+                    <img src="{{ site.baseurl }}/img/work/{{ page.sample-img-3 }}" alt="{{ page.sample-img-alt-1 }}">
+                    <figcaption>{{ page.sample-img-caption-3 }}</figcaption>
+                </figure>
+            </div>
+            {% endif %}
+            {% if page.sample-img-4 %}
+            <div class="tablet:grid-col-6">
+                <figure>
+                    <img src="{{ site.baseurl }}/img/work/{{ page.sample-img-4 }}" alt="{{ page.sample-img-alt-2 }}">
+                    <figcaption>{{ page.sample-img-caption-4 }}</figcaption>
+                </figure>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% if page.website %}
+    <div class="grid-container">
+        <div class="grid-row">
+            <div class="tablet:grid-col-12">
+                <h2>Learn more</h2>
+                <a href="{{ page.website }}" class="usa-button usa-button--outline margin-bottom-2">Visit website</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</main>
+{% include footer.html %}

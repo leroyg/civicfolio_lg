@@ -1,0 +1,21 @@
+<ul class="usa-card-group">
+    {% if include.limit %}
+        {% assign limitVar = include.limit | plus: 0 %}
+    {% endif %}
+    {% for item in site.data.press.docs limit:limitVar %}
+    <li class="tablet:grid-col-4 usa-card">
+        <div class="usa-card__container">
+            <header class="usa-card__header">
+                <h3 class="usa-card__heading">
+                    <a href="{{ site.baseurl }}{{ item.url }}" class="usa-link--external">
+                        {{ item.title }}
+                    </a>
+                </h3>
+            </header>
+            <div class="usa-card__body">
+                <p>{{ item.source }}</p>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
